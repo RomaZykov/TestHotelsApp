@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:icon="@drawable/filter_list"
+        android:title="@string/filter_options"
+        app:showAsAction="ifRoom">
+
+        <menu>
+            <item
+                android:id="@+id/filterByDistanceFromCenter"
+                android:title="@string/by_distance_from_center"
+                app:showAsAction="withText" />
+
+            <item
+                android:id="@+id/filterBySuitesAvailability"
+                android:title="@string/by_suites"
+                app:showAsAction="withText" />
+        </menu>
+    </item>
+</menu>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/hotel_compose_nav"
+    app:startDestination="@id/hotelFragmentCompose">
+
+    <fragment
+        android:id="@+id/hotelFragmentCompose"
+        android:name="com.example.hotelcompose.HotelComposeFragment"
+        android:label="Hotel">
+
+        <deepLink
+            app:uri="@string/hotel_compose_deep_link" />
+
+        <argument android:name="hotelId" app:argType="string"/>
+    </fragment>
+</navigation>

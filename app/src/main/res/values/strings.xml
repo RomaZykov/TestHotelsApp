@@ -1,3 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">TestHotelsApp</string>
+    <string name="app_name">app</string>
+    <string name="by_distance_from_center">по дистанции от центра</string>
+    <string name="by_suites">по кол-ву мест</string>
 </resources>
