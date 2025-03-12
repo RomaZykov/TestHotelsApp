@@ -1,4 +1,14 @@
-## Description
+<p align="center">
+  <a href="https://github.com/RomaZykov/TestHotelsApp/blob/master/README.md">
+    <img src="https://img.shields.io/badge/lang-en-yellow" />
+  </a>
+  <a href="https://github.com/RomaZykov/TestHotelsApp/blob/master/README.ru.md">
+    <img src="https://img.shields.io/badge/%D1%8F%D0%B7%D1%8B%D0%BA-%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9-orange" />
+  </a>
+</p>
+<p align="center">
+
+## Description (test task)
   A test assignment with a list of hotels and a transition to a specific hotel with an additional description: with a mixed XML and Jetpack Compose layout, multi-modularity and a pinch of tests.
 
 ## Screenshots
