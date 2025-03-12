@@ -33,4 +33,4 @@
 - Detailed information about a specific hotel (Compose)
 
 ## Tests
-- Ui and Unit tests for the Compose screen: features-hotel Compose
+- Ui and Unit tests for the Compose screen: features-hotelCompose
