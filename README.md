@@ -1,4 +1,4 @@
-<h1 align="center">Test task<br /></h1>
+<h1 align="center">Test task<br/></h1>
 
 <p align="center">
   <a href="https://github.com/RomaZykov/TestHotelsApp/blob/master/README.md">
