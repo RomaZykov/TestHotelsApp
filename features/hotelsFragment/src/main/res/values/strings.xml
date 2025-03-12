@@ -2,7 +2,7 @@
 
     <string name="app_bar_title">HotelsApp</string>
     <string name="hotel_stars">%.1f</string>
-    <string name="hotel_distance">%.1f метров до центра</string>
+    <string name="hotel_distance">%.1f м до центра</string>
     <string name="error">Error: %s</string>
     <string name="total_suites_available">Номеров свободно: %d</string>
     <string name="refresh_button">Обновить список</string>
