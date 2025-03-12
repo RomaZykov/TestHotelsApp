@@ -6,11 +6,11 @@ sealed class TestHotelsAppException(val code: Int, message: String) : IOExceptio
 
     class NoInternetConnectionException(message: String = "") : TestHotelsAppException(NO_INTERNET_CONNECTION, message)
 
-    class NoDataFoundException(message: String = "") : TestHotelsAppException(NO_DATA_FOUND, message)
+    class ServiceUnavailableException(message: String = "") : TestHotelsAppException(SERVICE_UNAVAILABLE, message)
 
     companion object {
         const val NO_INTERNET_CONNECTION = 1001
-        const val NO_DATA_FOUND = 1002
+        const val SERVICE_UNAVAILABLE = 1002
     }
 }
 

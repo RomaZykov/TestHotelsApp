@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="distance_from_center">%.1f метров</string>
-    <string name="specific_suites_available">Свободные комнаты №: %s</string>
+    <string name="distance_from_center">%.1f м</string>
+    <string name="zero_suites_available">Нет свободных комнат</string>
+    <plurals name="specific_suites_available">
+        <item quantity="other">Свободные комнаты №: %s</item>
+    </plurals>
     <string name="back_button">Назад</string>
 </resources>

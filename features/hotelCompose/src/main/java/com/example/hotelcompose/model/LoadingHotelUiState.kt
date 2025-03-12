@@ -9,13 +9,21 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 object LoadingHotelUiState : UiState {
     @Composable
     override fun Display(onBackButtonClicked: () -> Unit) {
-        Column(modifier = Modifier.fillMaxWidth()) {
+        Column(
+            modifier = Modifier
+                .semantics {
+                    contentDescription = "CircularProgressIndicator"
+                }
+                .fillMaxWidth()
+        ) {
             CircularProgressIndicator(
                 modifier = Modifier
                     .align(Alignment.CenterHorizontally)

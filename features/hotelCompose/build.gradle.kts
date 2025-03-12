@@ -29,9 +29,12 @@ dependencies {
     implementation(libs.glide.compose)
 
     debugImplementation(libs.compose.ui.tooling)
+    debugImplementation(libs.compose.ui.manifest)
 
     testImplementation(libs.junit)
+    testImplementation(libs.compose.ui.test.junit4)
 
+    androidTestImplementation(libs.compose.ui.junit4.android)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }

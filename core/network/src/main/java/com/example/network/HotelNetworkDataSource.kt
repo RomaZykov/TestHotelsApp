@@ -15,13 +15,13 @@ interface HotelNetworkDataSource {
 
         override suspend fun allHotels(): List<HotelNetwork> {
             val hotels = hotelsService.getHotels().execute().body()
-            return hotels ?: throw TestHotelsAppException.NoDataFoundException()
+            return hotels ?: throw TestHotelsAppException.ServiceUnavailableException()
         }
 
         override suspend fun getHotel(id: Int): HotelNetwork {
             val hotel = hotelsService.getHotel(id).execute().body()
             val result = hotel?.let { hotel.copy(imageUrl = IMAGE_URL + hotel.imageId) }
-            return result ?: throw TestHotelsAppException.NoDataFoundException()
+            return result ?: throw TestHotelsAppException.ServiceUnavailableException()
         }
     }
 

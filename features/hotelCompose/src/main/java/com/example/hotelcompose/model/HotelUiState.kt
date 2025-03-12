@@ -31,7 +31,10 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Density
@@ -62,20 +65,26 @@ data class HotelUiState(
             RelatedImage(imageId, imageUrl)
             Title(name, stars)
             Spacer(modifier = Modifier.padding(2.dp))
-            SingleLineBlock(address, com.example.ui.R.drawable.pin)
+            SingleLineBlock(address, com.example.ui.R.drawable.pin, "Hotel address")
             Spacer(modifier = Modifier.padding(4.dp))
             SingleLineBlock(
                 stringResource(R.string.distance_from_center, distance),
-                com.example.ui.R.drawable.elbow_connector
+                com.example.ui.R.drawable.elbow_connector,
+                "Hotel distance"
             )
             Spacer(modifier = Modifier.padding(4.dp))
 
             SingleLineBlock(
-                stringResource(
-                    R.string.specific_suites_available,
-                    suitesAvailability.joinToString { it.toString() }
-                ),
-                com.example.ui.R.drawable.bed_single
+                if (suitesAvailability.isEmpty()) {
+                    stringResource(R.string.zero_suites_available)
+                } else {
+                    pluralStringResource(
+                        R.plurals.specific_suites_available, suitesAvailability.size,
+                        suitesAvailability.joinToString { it.toString() }
+                    )
+                },
+                com.example.ui.R.drawable.bed_single,
+                "Hotel suites available"
             )
 
             Spacer(modifier = Modifier.weight(1f))
@@ -93,7 +102,11 @@ private fun RelatedImage(imageId: String, imageUrl: String) {
             .contains(Regex("[а-яА-ЯёЁa-zA-Z]")) || imageId.isBlank()
     ) {
         Image(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier
+                .semantics {
+                    contentDescription = "placeholder hotel image"
+                }
+                .fillMaxWidth(),
             painter = painterResource(R.drawable.group_4),
             contentDescription = null
         )
@@ -103,6 +116,9 @@ private fun RelatedImage(imageId: String, imageUrl: String) {
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier
+                .semantics {
+                    contentDescription = "hotel image"
+                }
                 .fillMaxWidth()
                 .requiredHeight(200.dp)
                 .clip(RoundedCornerShape(size = 16.dp))
@@ -131,7 +147,7 @@ private fun ColumnScope.Title(name: String, stars: Double) {
 }
 
 @Composable
-private fun SingleLineBlock(primaryText: String, @DrawableRes image: Int) {
+private fun SingleLineBlock(primaryText: String, @DrawableRes image: Int, contentDesc: String) {
     Row {
         Image(
             modifier = Modifier
@@ -145,7 +161,11 @@ private fun SingleLineBlock(primaryText: String, @DrawableRes image: Int) {
         )
         Spacer(modifier = Modifier.padding(4.dp))
         Text(
-            modifier = Modifier.align(Alignment.CenterVertically),
+            modifier = Modifier
+                .semantics {
+                    contentDescription = contentDesc
+                }
+                .align(Alignment.CenterVertically),
             text = primaryText,
             fontSize = 16.sp
         )
@@ -156,6 +176,9 @@ private fun SingleLineBlock(primaryText: String, @DrawableRes image: Int) {
 private fun BackButton(onBackButtonClicked: () -> Unit) {
     Button(
         modifier = Modifier
+            .semantics {
+                contentDescription = "back button"
+            }
             .fillMaxWidth()
             .padding(16.dp),
         colors = ButtonColors(
