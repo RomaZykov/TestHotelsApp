@@ -1,3 +1,5 @@
+<h1 align="center">Тестовое задание<br /></h1>
+
 <p align="center">
   <a href="https://github.com/RomaZykov/CringeHub/blob/master/README.md">
     <img src="https://img.shields.io/badge/lang-en-yellow" />
