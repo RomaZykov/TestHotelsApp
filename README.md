@@ -1,3 +1,5 @@
+<h1 align="center">Test task<br /></h1>
+
 <p align="center">
   <a href="https://github.com/RomaZykov/TestHotelsApp/blob/master/README.md">
     <img src="https://img.shields.io/badge/lang-en-yellow" />
@@ -8,7 +10,7 @@
 </p>
 <p align="center">
 
-## Description (test task)
+## Description
   A test assignment with a list of hotels and a transition to a specific hotel with an additional description: with a mixed XML and Jetpack Compose layout, multi-modularity and a pinch of tests.
 
 ## Screenshots
